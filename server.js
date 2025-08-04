@@ -3,6 +3,7 @@
 const { name } = require('ejs');
 const express = require('express');
 const app = express();
+
 const RESTAURANT = {
     name: 'The Green Byte Bistro',
     isOpen: true,
@@ -63,8 +64,6 @@ app.get('/menu/:category', (req, res) => {
 
 
 
-// server.js
-
 // app.get('/menuItems', (req, res) => {
 //   res.render('category.ejs', {
 //     for (let index = 0; index < array.length; index++) {
@@ -109,7 +108,7 @@ app.get('/', (req, res) => {
 
 app.get('/menu', (req, res) => {
     res.render('menu.ejs')});
-
+//need to create menu.ejs file
 
 
     app.listen(3000, () => {

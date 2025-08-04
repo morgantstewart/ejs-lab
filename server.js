@@ -58,12 +58,6 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/menu/:category', (req, res) => {
-    res.render('category.ejs');
-});
-
-
-
 // app.get('/menuItems', (req, res) => {
 //   res.render('category.ejs', {
 //     for (let index = 0; index < array.length; index++) {
@@ -95,6 +89,13 @@ app.get('/', (req, res) => {
 
 app.get('/menu', (req, res) => {
     res.render('menu.ejs')});
+
+
+app.get('/menu/:category', (req, res) => {
+    res.render('category.ejs');
+});
+
+
 
 
 

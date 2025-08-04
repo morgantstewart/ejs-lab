@@ -57,27 +57,10 @@ const RESTAURANT = {
     ]
 }
 
-app.get('/', (req, res) => {
-    res.render('home.ejs');
-});
-
-
-// app.get('/menuItems', (req, res) => {
-//   res.render('category.ejs', {
-//     for (let index = 0; index < array.length; index++) {
-//         const element = array[index];
-
-//     }
-//   }
-//     }
-//   );
-// ;
-
-
-// app.get('/home', (req, res) => {
-//     res.send('home.ejs',
-//         res.send('<h1>Home Page</h1>'))
+// app.get('/', (req, res) => {
+//     res.render('home.ejs');
 // });
+
 
 
 app.get('/', (req, res) => {
@@ -90,14 +73,12 @@ app.get('/', (req, res) => {
 
 
 
-
 app.get('/menu', (req, res) => {
-    const category = req.params.category;
-    res.render('menu.ejs')
+  const category = req.params.category;
+  const categoryItems = RESTAURANT.menu.filter(item => item.category === category);
+
+  res.render('menu.ejs', { category, categoryItems });
 });
-
-
-
 
 
 

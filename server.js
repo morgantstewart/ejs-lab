@@ -81,19 +81,6 @@ app.get('/menu/:category', (req, res) => {
 //         res.send('<h1>Home Page</h1>'))
 // });
 
-// server.js
-
-app.get('/', (req, res) => {
-  res.render('home.ejs', { 
-    msg: 'Welcome to the home page' ,
-    player: {
-      name: "friend"
-    }
-  });
-});
-
-
-// server.js
 
 app.get('/', (req, res) => {
     res.render('home.ejs', {
@@ -108,7 +95,10 @@ app.get('/', (req, res) => {
 
 app.get('/menu', (req, res) => {
     res.render('menu.ejs')});
-//need to create menu.ejs file
+
+
+
+
 
 
     app.listen(3000, () => {

@@ -4,6 +4,10 @@ const { name } = require('ejs');
 const express = require('express');
 const app = express();
 
+
+
+
+
 const RESTAURANT = {
     name: 'The Green Byte Bistro',
     isOpen: true,
@@ -62,7 +66,7 @@ app.get('/', (req, res) => {
 //   res.render('category.ejs', {
 //     for (let index = 0; index < array.length; index++) {
 //         const element = array[index];
-    
+
 //     }
 //   }
 //     }
@@ -78,9 +82,9 @@ app.get('/', (req, res) => {
 
 app.get('/', (req, res) => {
     res.render('home.ejs', {
-        name: '',
-        address: '',
-        phone: ''
+        name: 'The Green Byte Bistro',
+        address: '742 Evergreen Rd, Mapleview, OS 45502',
+        phone: '555-321-9876'
     });
 });
 
@@ -88,14 +92,19 @@ app.get('/', (req, res) => {
 
 
 app.get('/menu', (req, res) => {
-    res.render('menu.ejs')});
+    const category = req.params.category;
+    res.render('menu.ejs')
+});
+
+
+
+
 
 
 app.get('/menu/:category', (req, res) => {
-    const category = req.params.category
+    const category = req.params.category;
     const categoryList = RESTAURANT.menu.filter(banana => banana.category === category)
-    console.log(categoryList);
-    res.render('category.ejs', categoryList);
+    res.render('category.ejs', { categoryList });
 });
 
 
@@ -104,8 +113,6 @@ app.get('/menu/:category', (req, res) => {
 
 
 
-
-
-    app.listen(3000, () => {
-        console.log('Listening on port 3000');
-    });
+app.listen(3000, () => {
+    console.log('Listening on port 3000');
+});

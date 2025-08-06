@@ -11,9 +11,14 @@
   <%- include('./partials/nav') %>
     <h1>Full Menu</h1>
 
+ <% categoryItems.forEach(menu => { %>
+    <li><strong>Name:</strong> <%= menu.name %></li>
+    <li><strong>Price:</strong> $<%= menu.price %></li>
+    <li><strong>Rating:</strong> <%= menu.rating %></li>
+    <li><strong>Details:</strong> <%= menu.details %></li>
+    <hr />
+  <% }); %>
 
-        
 </body>
-
-
 </html>
+

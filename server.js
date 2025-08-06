@@ -90,7 +90,7 @@ app.get('/menu', (req, res) => {
 app.get('/menu/:category', (req, res) => {
     const category = req.params.category;
     const categoryList = RESTAURANT.menu.filter(banana => banana.category === category)
-    res.render('category.ejs', { categoryList });
+    res.render('category.ejs', { categoryList, category });
 });
 
 
